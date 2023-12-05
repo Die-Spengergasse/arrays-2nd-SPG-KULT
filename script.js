@@ -87,11 +87,9 @@ function splice() {
 }
 function Of() {
     const i1 = eval(input1.value);
-    let res = "";
-    for (const item of i1) {
-        res += item;
-    }
-    output.publish(res);
+    const i2 = eval(input2.value);
+    const i3 = eval(input3.value);
+    const res = Array.of(i1, i2, i3);
 }
 
 function Map() {
@@ -105,12 +103,12 @@ function filter() {
     const i1 = eval(input1.value);
     const i2 = eval(input2.value);
     const res = i1.filter(value => value > i2);
-    output.publish(res);                            //geht gerade nur mit Zahlen
+    output.publish(res);                            //geht nur mit Zahlen
 }
 
-function split() {                          //muss ich fragen
+function split() {                          
     const i1 = eval(input1.value);
-    const i2 = input2; 
+    const i2 = eval(input2.value);
     const res = i1.split(i2);
     output.publish(res);
 }
@@ -128,7 +126,7 @@ function some() {
     const i2 = eval(input2.value);
     const res = i1.some(checkValue());
    output.publish(res);
-                                            //musst ich auch noch fragen
+                                           //musst ich auch noch fragen
         
     }
     function checkValue(res)
